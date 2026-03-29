@@ -73,13 +73,17 @@ Navigate to `config/portfolio.ts` to seamlessly update:
 
 ## 🌐 Deployment
 
-This application is fully optimized and ready to deploy on **Vercel**. 
+This application is fully optimized and ready to be deployed on **Netlify**. 
 
-1. Push your code to your GitHub repository.
-2. Sign in to [Vercel](https://vercel.com/) and click **Add New Project**.
-3. Import your Git repository.
-4. Keep the default Next.js build settings and hit **Deploy**.
-5. Once complete, your site will be live instantly!
+1. Push your code to your GitHub repository (e.g., `git push origin main`).
+2. Sign in to [Netlify](https://app.netlify.com/) and click **Add new site** > **Import an existing project**.
+3. Connect your GitHub account and select your repository.
+4. Netlify will automatically detect Next.js. Ensure the build settings are:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `.next`
+5. Click **Deploy**. Your site will be built and go live automatically.
+
+*(Note: Netlify offers native edge support for Next.js App Router applications, so SSR and server components will work perfectly out-of-the-box via zero-config deployments).*
 
 ---
 

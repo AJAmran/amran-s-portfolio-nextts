@@ -1,4 +1,15 @@
-import { Home, User, Briefcase, Code, Mail, Layers, Layout, Server, Database, Terminal } from "lucide-react"
+import {
+  Home,
+  User,
+  Briefcase,
+  Code,
+  Mail,
+  Layers,
+  Layout,
+  Server,
+  Database,
+  Terminal,
+} from "lucide-react";
 
 export const portfolioConfig = {
   personal: {
@@ -6,13 +17,13 @@ export const portfolioConfig = {
     title: "MERN Stack Developer",
     role: "Full Stack Engineer",
     email: "mdamranhossen77@gmail.com",
-    phone: "+880 1878-336155",
-    location: "Chattogram, Bangladesh",
+    phone: "+8801857692587",
+    location: "Dhaka, Bangladesh",
     resumeUrl: "/resume.pdf",
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    }
+      github: "https://github.com/AJAmran",
+      linkedin: "https://www.linkedin.com/in/md-amran-hossen-713574206/",
+    },
   },
   nav: [
     { name: "Home", href: "#", icon: Home },
@@ -26,133 +37,302 @@ export const portfolioConfig = {
     badge: "Available for work",
     heading1: "Building",
     heading2: "The Future",
-    description: "I'm Md. Amran Hossen. I craft spatial, immersive, and high-performance web experiences.",
+    description:
+      "I'm Md. Amran Hossen. I craft spatial, immersive, and high-performance web experiences.",
   },
   skills: {
     title: "Development Toolkit",
-    description: "A comprehensive overview of my technical skills and the tools I use to build modern web applications.",
+    description:
+      "A comprehensive overview of my technical skills and the tools I use to build modern web applications.",
     categories: [
       {
         title: "Frontend Engineering",
         icon: Layout,
-        description: "Crafting pixel-perfect, responsive, and accessible user interfaces.",
+        description:
+          "Crafting pixel-perfect, responsive, and accessible user interfaces.",
         skills: [
-          "React.js", "Next.js", "TypeScript", 
-          "Tailwind CSS", "Framer Motion", "Redux Toolkit",
-          "HTML5 & CSS3", "Bootstrap"
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Redux Toolkit",
+          "HTML5 & CSS3",
+          "Bootstrap",
         ],
-        color: "text-blue-500"
+        color: "text-blue-500",
       },
       {
         title: "Backend Architecture",
         icon: Server,
-        description: "Building secure, scalable, and efficient server-side applications.",
+        description:
+          "Building secure, scalable, and efficient server-side applications.",
         skills: [
-          "Node.js", "Express.js", "RESTful APIs", 
-          "JWT Authentication", "MVC Pattern", "API Integration",
-          "Payment Gateways", "Middleware"
+          "Node.js",
+          "Express.js",
+          "RESTful APIs",
+          "JWT Authentication",
+          "MVC Pattern",
+          "API Integration",
+          "Payment Gateways",
+          "Middleware",
         ],
-        color: "text-green-500"
+        color: "text-green-500",
       },
       {
         title: "Database & Cloud",
         icon: Database,
-        description: "Designing efficient data models and deploying web applications.",
+        description:
+          "Designing efficient data models and deploying web applications.",
         skills: [
-          "MongoDB", "Mongoose", "Firebase", 
-          "Vercel", "Netlify", "Cloudinary",
-          "NoSQL Design", "Data Aggregation"
+          "MongoDB",
+          "Mongoose",
+          "Firebase",
+          "Vercel",
+          "Netlify",
+          "Cloudinary",
+          "NoSQL Design",
+          "Data Aggregation",
         ],
-        color: "text-purple-500"
+        color: "text-purple-500",
       },
       {
         title: "Tools & Workflow",
         icon: Terminal,
-        description: "Optimizing development workflows and ensuring code quality.",
+        description:
+          "Optimizing development workflows and ensuring code quality.",
         skills: [
-          "Git & GitHub", "VS Code", "Postman", 
-          "NPM / Yarn", "Figma", "Chrome DevTools",
-          "ESLint / Prettier", "Vercel CLI"
+          "Git & GitHub",
+          "VS Code",
+          "Postman",
+          "NPM / Yarn",
+          "Figma",
+          "Chrome DevTools",
+          "ESLint / Prettier",
+          "Vercel CLI",
         ],
-        color: "text-orange-500"
-      }
-    ]
+        color: "text-orange-500",
+      },
+    ],
   },
   projects: {
     title: "Featured Projects",
-    description: "A selection of my recent work demonstrating my technical capabilities across different domains.",
+    description:
+      "A selection of my recent work demonstrating my technical capabilities across different domains.",
     categories: ["All", "Real World", "Practical", "AI & Tools"],
     items: [
       {
         title: "X-mart Super Shop",
-        category: "Real World",
-        description: "A full-featured e-commerce platform for a super shop chain with inventory management and online ordering.",
-        tags: ["React", "Node.js", "MongoDB", "Express", "Redux"],
-        image: "https://picsum.photos/seed/xmart/800/600",
-        links: {
-          demo: "#",
-          client: "#",
-          server: "#",
-        },
-      },
-      {
-        title: "Bangabandhu Int. Conf. Center",
-        category: "Real World",
-        description: "Official website for the international conference center, featuring event booking and virtual tours.",
-        tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-        image: "https://picsum.photos/seed/bicc/800/600",
-        links: {
-          demo: "#",
-          client: "#",
-        },
-      },
-      {
-        title: "Xinxian Hospitality Institute",
         category: "Practical",
-        description: "Educational portal for a hospitality training institute with student management and course enrollment.",
-        tags: ["MERN Stack", "Bootstrap", "JWT Auth"],
-        image: "https://picsum.photos/seed/xinxian/800/600",
+        description:
+          "A comprehensive, full-stack e-commerce platform tailored for a large-scale super shop chain. It features robust inventory management, seamless online ordering, and a highly responsive user interface to deliver an exceptional shopping experience.",
+        tags: [
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "Express.js",
+          "Mongoose",
+          "MongoDB",
+          "Redux Toolkit",
+          "Tailwind CSS",
+          "JWT Auth",
+          "Cloudinary",
+          "Framer Motion",
+          "Lucide Icons",
+          "TanStack Query",
+          "React Hook Form",
+          "Zod",
+          "Axios",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774775980/Macbook-Air-1559x975_pg2wrh.png",
         links: {
-          demo: "#",
+          demo: "https://x-mart-client.vercel.app/", // Add your live demo link here
+          client: "https://github.com/AJAmran/x-mart-client.git",
+          server: "https://github.com/AJAmran/x-mart-backend.git",
         },
       },
       {
-        title: "Scouts Poll",
+        title: "Gadget Load",
+        category: "Real World",
+        description:
+          "A comprehensive full-stack e-commerce platform for electronic gadgets. It features a modern user interface, advanced product catalog, secure checkout, and a powerful admin dashboard for managing inventory, daily discounts, and recent orders.",
+        tags: [
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "Mongoose",
+          "Tailwind CSS",
+          "Framer Motion",
+          "React Hook Form",
+          "Zod",
+          "TanStack Query (React Query)",
+          "Axios",
+          "Radix UI",
+          "Recharts",
+          "Swiper",
+          "Lucide React",
+          "Sonner",
+          "jsPDF",
+          "html2canvas",
+          "JWT Decode",
+          "Bcryptjs",
+          "JSON Web Token (JWT)",
+          "Nodemailer",
+          "Node-cron",
+          "Helmet",
+          "CORS",
+          "Slugify",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774776661/Macbook-Air-1559x975_xggzsb.png", // Make sure to replace this with your actual uploaded image URL
+        links: {
+          demo: "https://gadgetload.com/",
+        },
+      },
+      {
+        title: "Bangladesh-China Friendship Conference Center",
+        category: "Real World",
+        description:
+          "Official website for the Bangladesh-China Friendship Conference Center (BCFCC) in Dhaka, featuring event booking for state-of-the-art halls and auditoriums.",
+        tags: [
+          "React",
+          "Vite",
+          "Tailwind CSS",
+          "Swiper",
+          "PHP",
+          "MySQL",
+          "Cloudinary",
+          "React Router",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774774069/bcfccbd.com_nturoi.png",
+        links: {
+          demo: "https://bcfccbd.com/",
+        },
+      },
+      {
+        title: "Xinxian Hospitality Training Institute",
+        category: "Real World",
+        description:
+          "A comprehensive, production-ready educational portal custom-built for a hospitality training institute. Features a robust architecture supporting streamlined student data management, interactive course enrollment pipelines, and a secure, role-based administrative dashboard.",
+        tags: [
+          "React",
+          "Vite",
+          "React Router",
+          "Tailwind CSS",
+          "Bootstrap",
+          "Swiper",
+          "PHP",
+          "MySQL",
+          "JWT Auth",
+          "Cloudinary",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774773837/xhtibd_kghuh9.png",
+        links: {
+          demo: "https://xhtibd.com/",
+        },
+      },
+      {
+        title: "Sahitya Bari",
         category: "Practical",
-        description: "A secure polling and voting application designed for scout groups to manage elections and surveys.",
-        tags: ["React", "Firebase", "Chart.js"],
-        image: "https://picsum.photos/seed/scouts/800/600",
+        description:
+          "A high-end, cinematic platform dedicated to the preservation and showcase of Bengali literature and media. Built with Next.js 15 and a custom 'iOS 26' design system using OKLCH color tokens, it features an optimized video narrative library, an editorial blog archive, and a managed shop for literary merchandise. The platform includes a comprehensive administrative suite with secure authentication and real-time content orchestration.",
+        tags: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "MongoDB",
+          "Mongoose",
+          "Tailwind CSS",
+          "OKLCH Design System",
+          "Glassmorphism",
+          "NextAuth.js",
+          "Motion (Framer Motion)",
+          "React Hook Form",
+          "Zod",
+          "Google Gemini AI",
+          "YouTube Data API v3",
+          "Lucide React",
+          "Sonner",
+          "Date-fns",
+          "Recharts",
+          "PostCSS",
+          "Adaptive UI (iOS 26 Style)",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774781464/Sahitya-Bari-Showcase.png",
         links: {
-          demo: "#",
-          code: "#",
+          demo: "https://sahitya-bari.vercel.app/",
+          client: "https://github.com/AJAmran/sahityabari.git",
         },
       },
       {
-        title: "AI Content Studio",
+        title: "Feedback Card Reader",
         category: "AI & Tools",
-        description: "An AI-powered content generation tool utilizing the Gemini API to help marketers create SEO-optimized copy.",
-        tags: ["Next.js", "Gemini API", "Tailwind CSS"],
-        image: "https://picsum.photos/seed/ai/800/600",
+        description:
+          "A premium, AI-powered specialized OCR tool designed for the hospitality industry to seamlessly digitize handwritten guest feedback cards into actionable data.",
+        tags: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Google GenAI",
+          "Tesseract.js",
+          "Recharts",
+          "Radix UI",
+          "React Hook Form",
+          "Zod",
+          "React Dropzone",
+          "jsPDF",
+          "HTML2Canvas",
+          "React PDF Renderer",
+          "Browser Image Compression",
+          "Lucide React",
+          "Tailwind Merge",
+          "CVA",
+          "TW Animate CSS",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774777853/feedback-card-reader-ct4j.vercel.app__1_1_dteyki.png",
         links: {
-          demo: "#",
-          code: "#",
+          demo: "https://feedback-card-reader-ct4j.vercel.app/",
         },
       },
       {
-        title: "DevSnippets Hub",
+        title: "SeasonBot - AI Dining Assistant",
         category: "AI & Tools",
-        description: "A practical tool for developers to save, categorize, and share reusable code snippets with syntax highlighting.",
-        tags: ["React", "Node.js", "MongoDB"],
-        image: "https://picsum.photos/seed/dev/800/600",
+        description:
+          "A next-generation conversational AI agent designed for the hospitality industry. It acts as a digital Head Waiter, featuring natural language menu browsing, context-aware upselling, real-time cart management, and interactive map validation for delivery.",
+        tags: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Google GenAI (Gemini)",
+          "Leaflet",
+          "React Leaflet",
+          "Lucide React",
+          "clsx",
+          "tailwind-merge",
+          "ESLint",
+          "PostCSS",
+        ],
+        image:
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774778907/localhost_3001__1_m5txqg.png",
         links: {
-          demo: "#",
-          code: "#",
+          demo: "https://x-bot-rust.vercel.app/",
+          client: "https://github.com/AJAmran/x-bot.git",
         },
       },
-    ]
+    ],
   },
   contact: {
     title: "Let's Work Together",
-    description: "Have a project in mind or just want to say hi? I'd love to hear from you.",
-  }
-}
+    description:
+      "Have a project in mind or just want to say hi? I'd love to hear from you.",
+  },
+};

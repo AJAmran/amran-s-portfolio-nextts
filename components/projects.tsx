@@ -54,7 +54,7 @@ export function Projects() {
           </div>
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -96,9 +96,9 @@ export function Projects() {
                           <ExternalLink className="w-4 h-4" /> Live Demo
                         </a>
                       )}
-                      {project.links.code && (
+                      {project.links.client && (
                         <a
-                          href={project.links.code}
+                          href={project.links.client}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-sm font-bold rounded-full shadow-lg border border-white/20 transition-colors"
