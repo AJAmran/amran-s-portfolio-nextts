@@ -110,8 +110,8 @@ export function Hero() {
                   animate={{
                     borderRadius: ["60% 40% 30% 70%/60% 30% 70% 40%", "40% 60% 70% 30%/50% 60% 30% 60%", "60% 40% 30% 70%/60% 30% 70% 40%"]
                   }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px] lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-indigo-100 dark:from-indigo-900/40 via-purple-100 dark:via-purple-900/40 to-pink-100 dark:to-pink-900/40 border border-white/60 dark:border-white/10 shadow-2xl relative"
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px] lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-indigo-100 dark:from-indigo-900/40 via-purple-100 dark:via-purple-900/40 to-pink-100 dark:to-pink-900/40 border border-white/60 dark:border-white/10 shadow-2xl relative will-change-[border-radius]"
                 >
                   {/* Inner glass highlight */}
                   <div className="absolute inset-0 rounded-[inherit] bg-gradient-to-b from-white/40 to-transparent dark:from-white/5" />
@@ -146,20 +146,33 @@ export function Hero() {
 
               {/* Social Follow Badge */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1, type: "spring" }}
-                className="absolute bottom-4 z-20 w-fit max-w-[90vw]"
+                transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 100 }}
+                className="absolute bottom-6 sm:bottom-10 z-20 w-fit max-w-[95vw]"
               >
-                <GlassCard className="px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl flex items-center justify-center gap-2 sm:gap-4 bg-white/95 dark:bg-white/95 backdrop-blur-xl border border-gray-100 dark:border-white/20">
-                  <span className="text-[10px] sm:text-xs font-bold text-gray-900 tracking-wider whitespace-nowrap">FOLLOW ME:</span>
-                  <div className="flex items-center gap-2 sm:gap-3">
+                <div className="glass-panel px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl sm:rounded-full shadow-2xl flex items-center gap-4 sm:gap-5 bg-white/70 dark:bg-black/40 border border-white/40 dark:border-white/10 ring-1 ring-black/5 dark:ring-white/5 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-[shimmer_3s_infinite] pointer-events-none" />
+                  
+                  <div className="flex items-center gap-2.5">
+                    <div className="relative">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <div className="absolute inset-0 w-2 h-2 rounded-full bg-emerald-500 animate-ping opacity-75" />
+                    </div>
+                    <span className="text-[10px] sm:text-[11px] font-black text-gray-900 dark:text-white tracking-widest uppercase opacity-80">
+                      Connect
+                    </span>
+                  </div>
+
+                  <div className="h-4 w-px bg-gray-300 dark:bg-white/20" />
+
+                  <div className="flex items-center gap-3.5 sm:gap-4.5">
                     <Button
                       variant="none"
                       size="none"
                       href="https://www.facebook.com/share/17tyHAjCap/"
                       aria-label="Facebook Profile"
-                      className="text-black hover:text-[#F04A26] transition-transform hover:scale-110"
+                      className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                     >
                       <Facebook aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                     </Button>
@@ -168,7 +181,7 @@ export function Hero() {
                       size="none"
                       href="https://www.instagram.com/mdamran441/"
                       aria-label="Instagram Profile"
-                      className="text-black hover:text-[#F04A26] transition-transform hover:scale-110"
+                      className="text-gray-700 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                     >
                       <Instagram aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5" />
                     </Button>
@@ -177,7 +190,7 @@ export function Hero() {
                       size="none"
                       href="https://x.com/MdAmran29290306"
                       aria-label="Twitter Profile"
-                      className="text-black hover:text-[#F04A26] transition-transform hover:scale-110"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                     >
                       <X aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                     </Button>
@@ -188,12 +201,12 @@ export function Hero() {
                       aria-label="LinkedIn Profile"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black hover:text-[#F04A26] transition-transform hover:scale-110"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                     >
                       <Linkedin aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                     </Button>
                   </div>
-                </GlassCard>
+                </div>
               </motion.div>
             </div>
           </motion.div>

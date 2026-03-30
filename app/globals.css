@@ -59,6 +59,15 @@
   }
   
   --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes shimmer {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 }
 
 /* Force class-based dark mode for next-themes */
@@ -134,5 +143,25 @@ body {
 
 .glass-panel-thick {
   @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-3xl border border-white/40 dark:border-white/10 shadow-2xl shadow-black/10;
+}
+
+/* Scrollbar Hide Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mask Fade for scrollable areas */
+.mask-fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+@media (min-width: 640px) {
+  .mask-fade-edges {
+    mask-image: none;
+  }
 }
 

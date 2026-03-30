@@ -41,7 +41,7 @@ export function Experience() {
                 className="relative mb-10 last:mb-0"
               >
                 {/* Glowing Node */}
-                <div className="absolute -left-[37px] md:-left-[45px] top-6 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-500 ring-4 ring-indigo-500/20 shadow-[0_0_15px_rgba(99,102,241,0.5)] z-10" />
+                <div className="absolute -left-[37px] md:-left-[45px] top-6 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-500 ring-4 ring-indigo-500/20 shadow-[0_0_15px_rgba(99,102,241,0.5)] z-10" aria-hidden="true" />
 
                 <GlassCard className="p-6 sm:p-8 relative border border-gray-100 dark:border-white/10 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group" hoverEffect>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-4 gap-3">
@@ -74,7 +74,7 @@ export function Experience() {
                 className="relative mb-10 last:mb-0"
               >
                 {/* Glowing Node */}
-                <div className="absolute -left-[37px] md:-left-[45px] top-6 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 border-purple-500 ring-4 ring-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.5)] z-10" />
+                <div className="absolute -left-[37px] md:-left-[45px] top-6 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 border-purple-500 ring-4 ring-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.5)] z-10" aria-hidden="true" />
 
                 <GlassCard className="p-6 sm:p-8 relative border border-gray-100 dark:border-white/10 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 group" hoverEffect>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-4 gap-3">
@@ -122,7 +122,7 @@ export function Experience() {
                 className="relative mb-10 last:mb-0"
               >
                 {/* Glowing Node */}
-                <div className="absolute -left-[37px] md:-left-[45px] top-6 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-500 ring-4 ring-indigo-500/20 shadow-[0_0_15px_rgba(99,102,241,0.5)] z-10" />
+                <div className="absolute -left-[37px] md:-left-[45px] top-6 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-500 ring-4 ring-indigo-500/20 shadow-[0_0_15px_rgba(99,102,241,0.5)] z-10" aria-hidden="true" />
 
                 <GlassCard className="p-6 sm:p-8 relative border border-gray-100 dark:border-white/10 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group" hoverEffect>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-4 gap-3">

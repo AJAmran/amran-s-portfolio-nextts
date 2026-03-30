@@ -53,8 +53,8 @@ export function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center gap-2">
-              <Link href="/" className="text-xl font-bold tracking-tight flex items-center gap-1 group">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300">
+              <Link href="/" className="text-xl font-bold tracking-tight flex items-center gap-1 group" aria-label="Md. Amran Hossen Home Link">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300" aria-hidden="true">
                   {portfolioConfig.personal.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()}
                 </div>
                 <span className="hidden sm:inline-block text-gray-900 dark:text-white font-alt tracking-tight">Amran.dev</span>
@@ -94,6 +94,7 @@ export function Navbar() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
+                aria-haspopup="true"
                 aria-controls="mobile-menu"
                 aria-label={isOpen ? "Close main menu" : "Open main menu"}
                 className="md:hidden inline-flex items-center justify-center p-2.5 rounded-full bg-gray-100/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors backdrop-blur-md"
@@ -125,40 +126,42 @@ export function Navbar() {
               transition={{ type: "spring", duration: 0.5 }}
               className="fixed top-24 left-4 right-4 z-50 md:hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border border-gray-200/50 dark:border-white/10 overflow-hidden"
             >
-              <div className="p-2 space-y-1">
+              <ul className="p-2 space-y-1" role="menu">
                 {portfolioConfig.nav.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => {
-                      setActiveSection(link.name)
-                      setIsOpen(false)
-                    }}
-                    className={cn(
-                      "flex items-center gap-3 px-4 py-3.5 rounded-full transition-all duration-200",
-                      activeSection === link.name
-                        ? "bg-gray-100 dark:bg-white/10 text-indigo-600 dark:text-white font-semibold"
-                        : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-gray-200"
-                    )}
-                  >
-                    <div className={cn(
-                      "p-2 rounded-full transition-colors",
-                      activeSection === link.name
-                        ? "bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
-                    )}>
-                      <link.icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-base">{link.name}</span>
-                    {activeSection === link.name && (
-                      <motion.div
-                        layoutId="activeMobile"
-                        className="ml-auto w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"
-                      />
-                    )}
-                  </Link>
+                  <li key={link.name} role="none">
+                    <Link
+                      href={link.href}
+                      role="menuitem"
+                      onClick={() => {
+                        setActiveSection(link.name)
+                        setIsOpen(false)
+                      }}
+                      className={cn(
+                        "flex items-center gap-3 px-4 py-3.5 rounded-full transition-all duration-200",
+                        activeSection === link.name
+                          ? "bg-gray-100 dark:bg-white/10 text-indigo-600 dark:text-white font-semibold"
+                          : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-gray-200"
+                      )}
+                    >
+                      <div className={cn(
+                        "p-2 rounded-full transition-colors",
+                        activeSection === link.name
+                          ? "bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400"
+                          : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
+                      )}>
+                        <link.icon className="w-5 h-5" aria-hidden="true" />
+                      </div>
+                      <span className="text-base">{link.name}</span>
+                      {activeSection === link.name && (
+                        <motion.div
+                          layoutId="activeMobile"
+                          className="ml-auto w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"
+                        />
+                      )}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           </>
         )}

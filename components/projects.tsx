@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { SectionHeader } from "@/components/ui/section-header"
-import { ExternalLink, Github, Server } from "lucide-react"
+import { ExternalLink, Github, Server, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
@@ -31,30 +31,40 @@ export function Projects() {
           className="mb-12"
         />
 
-        {/* Filter Tabs - Responsive */}
-        <div className="flex justify-center mb-12 px-2">
-          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-1 sm:flex-nowrap p-1.5 bg-white/60 dark:bg-black/40 rounded-2xl sm:rounded-full border border-gray-200 dark:border-white/10 backdrop-blur-xl shadow-sm w-full sm:w-auto">
-            {projects.categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={cn(
-                  "relative flex-1 sm:flex-initial px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold tracking-wide transition-colors duration-300 whitespace-nowrap z-10 min-w-0",
-                  activeCategory === category
-                    ? "text-white dark:text-black"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-                )}
-              >
-                {activeCategory === category && (
-                  <motion.span
-                    layoutId="activeCategory"
-                    className="absolute inset-0 bg-gray-900 dark:bg-white rounded-xl sm:rounded-full -z-10 shadow-md"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span>{category}</span>
-              </button>
-            ))}
+        {/* Filter Tabs - Professional Horizontal Scroll for Mobile */}
+        <div className="flex justify-center mb-16 px-4">
+          <div className="relative w-full sm:w-auto flex items-center">
+            {/* Scroll Container */}
+            <div className="flex items-center gap-1 p-1.5 bg-white/60 dark:bg-black/30 rounded-2xl sm:rounded-full border border-gray-200/50 dark:border-white/5 backdrop-blur-2xl shadow-sm w-full sm:w-auto overflow-x-auto no-scrollbar flex-nowrap sm:justify-center mask-fade-edges scroll-smooth">
+              {projects.categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  aria-pressed={activeCategory === category}
+                  aria-label={`Filter by ${category}`}
+                  className={cn(
+                    "relative flex-none px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap z-10 min-w-0 font-sans",
+                    activeCategory === category
+                      ? "text-white dark:text-black scale-[1.02]"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                  )}
+                >
+                  {activeCategory === category && (
+                    <motion.span
+                      layoutId="activeCategory"
+                      className="absolute inset-0 bg-gray-900 dark:bg-white rounded-xl sm:rounded-full -z-10 shadow-lg"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span>{category}</span>
+                </button>
+              ))}
+            </div>
+            
+            {/* Persistent Right Scroll Indicator for Mobile */}
+            <div className="absolute right-2 pointer-events-none flex sm:hidden items-center justify-center w-8 h-8 rounded-full bg-gradient-to-l from-white dark:from-black/80 to-transparent z-20">
+              <ChevronRight className="w-4 h-4 text-gray-400 animate-pulse ml-2" />
+            </div>
           </div>
         </div>
 
@@ -97,9 +107,10 @@ export function Projects() {
                           rel="noopener noreferrer"
                           variant="none" size="none"
                           className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold rounded-full shadow-lg transition-colors"
-                          title="Live Demo"
+                          aria-label={`View Live Demo of ${project.title}`}
+                          title="View Live Demo"
                         >
-                          <ExternalLink className="w-4 h-4" /> Live Demo
+                          <ExternalLink className="w-4 h-4" aria-hidden="true" /> Live Demo
                         </Button>
                       )}
                       {project.links.client && (
@@ -109,9 +120,10 @@ export function Projects() {
                           rel="noopener noreferrer"
                           variant="none" size="none"
                           className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-sm font-bold rounded-full shadow-lg border border-white/20 transition-colors"
-                          title="View Code"
+                          aria-label={`View Source Code of ${project.title}`}
+                          title="View Source Code"
                         >
-                          <Github className="w-4 h-4" /> Code
+                          <Github className="w-4 h-4" aria-hidden="true" /> Code
                         </Button>
                       )}
                     </div>
@@ -139,13 +151,13 @@ export function Projects() {
                     {(project.links.client || project.links.server) && (
                       <div className="flex flex-wrap gap-5 pt-5 border-t border-gray-200 dark:border-gray-800">
                         {project.links.client && (
-                          <Button href={project.links.client} target="_blank" rel="noopener noreferrer" variant="none" size="none" className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
-                            <Github className="w-4 h-4" /> Client Repo
+                          <Button href={project.links.client} target="_blank" rel="noopener noreferrer" variant="none" size="none" aria-label={`View ${project.title} Client Repository`} className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
+                            <Github className="w-4 h-4" aria-hidden="true" /> Client Repo
                           </Button>
                         )}
                         {project.links.server && (
-                          <Button href={project.links.server} target="_blank" rel="noopener noreferrer" variant="none" size="none" className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
-                            <Server className="w-4 h-4" /> Server Repo
+                          <Button href={project.links.server} target="_blank" rel="noopener noreferrer" variant="none" size="none" aria-label={`View ${project.title} Server Repository`} className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
+                            <Server className="w-4 h-4" aria-hidden="true" /> Server Repo
                           </Button>
                         )}
                       </div>
