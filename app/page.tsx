@@ -1,13 +1,15 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
-import { Services } from "@/components/services";
-import { Skills } from "@/components/skills";
-import { Approach } from "@/components/approach";
-import { Projects } from "@/components/projects";
-import { Experience } from "@/components/experience";
-import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import dynamic from "next/dynamic";
+
+const About = dynamic(() => import("@/components/about").then(mod => mod.About), { ssr: true });
+const Services = dynamic(() => import("@/components/services").then(mod => mod.Services), { ssr: true });
+const Skills = dynamic(() => import("@/components/skills").then(mod => mod.Skills), { ssr: true });
+const Approach = dynamic(() => import("@/components/approach").then(mod => mod.Approach), { ssr: true });
+const Projects = dynamic(() => import("@/components/projects").then(mod => mod.Projects), { ssr: true });
+const Experience = dynamic(() => import("@/components/experience").then(mod => mod.Experience), { ssr: true });
+const Contact = dynamic(() => import("@/components/contact").then(mod => mod.Contact), { ssr: true });
 
 export default function Home() {
   return (

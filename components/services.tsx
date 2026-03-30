@@ -79,7 +79,7 @@ export function Services() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-20 sm:mt-24 text-center px-4"
         >

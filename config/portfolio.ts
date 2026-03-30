@@ -264,7 +264,7 @@ export const portfolioConfig = {
           "Adaptive UI (iOS 26 Style)",
         ],
         image:
-          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774781464/Sahitya-Bari-Showcase.png",
+          "https://res.cloudinary.com/ddbvbwznx/image/upload/v1774841983/Macbook-Air-1559x975_1_ei8uaw.png",
         links: {
           demo: "https://sahitya-bari.vercel.app/",
           client: "https://github.com/AJAmran/sahityabari.git",

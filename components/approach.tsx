@@ -71,7 +71,7 @@ export function Approach() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <GlassCard className="p-8 sm:p-10 h-full flex flex-col hover:shadow-2xl hover:shadow-indigo-500/10 border border-gray-100 dark:border-white/10 transition-all duration-300 group" hoverEffect spotlight>
