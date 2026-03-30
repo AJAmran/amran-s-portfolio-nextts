@@ -34,8 +34,8 @@ export function Experience() {
               <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent opacity-80" />
 
               <motion.div
-                initial={{ opacity: 0, x: -20, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
                 className="relative mb-10 last:mb-0"
@@ -67,8 +67,8 @@ export function Experience() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: -20, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="relative mb-10 last:mb-0"
@@ -104,7 +104,7 @@ export function Experience() {
           {/* Education */}
           <div>
             <div className="flex items-center gap-4 mb-10 pl-2">
-              <div className="p-3.5 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-xl shadow-indigo-500/20 text-white">
+              <div className="p-3.5 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shadow-xl shadow-indigo-500/20 text-white">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Education</h3>
@@ -115,8 +115,8 @@ export function Experience() {
               <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent opacity-80" />
 
               <motion.div
-                initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
                 className="relative mb-10 last:mb-0"
@@ -141,8 +141,8 @@ export function Experience() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="relative mb-10 last:mb-0"
@@ -166,8 +166,8 @@ export function Experience() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
-                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative mb-10 last:mb-0"

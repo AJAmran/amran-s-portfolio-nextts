@@ -12,10 +12,10 @@ export const viewport: Viewport = {
   ],
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://amran.dev'),
   title: {
     default: 'Md. Amran Hossen | MERN Stack Developer',
     template: '%s | Md. Amran Hossen',
@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   keywords: ['MERN Stack', 'Full Stack Developer', 'React', 'Next.js', 'Node.js', 'TypeScript', 'Tailwind CSS', 'Portfolio', 'Web Development'],
   authors: [{ name: 'Md. Amran Hossen' }],
   creator: 'Md. Amran Hossen',
+  alternates: {
+    canonical: 'https://amran.dev',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/Amran.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -31,12 +38,21 @@ export const metadata: Metadata = {
     title: 'Md. Amran Hossen | MERN Stack Developer',
     description: 'Portfolio of Md. Amran Hossen, a passionate MERN Stack Developer specializing in React, Node.js, Next.js, and cloud-native applications.',
     siteName: 'Md. Amran Hossen Portfolio',
+    images: [
+      {
+        url: '/Amran.png',
+        width: 1200,
+        height: 630,
+        alt: 'Md. Amran Hossen Portfolio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Md. Amran Hossen | MERN Stack Developer',
     description: 'Portfolio of Md. Amran Hossen, a passionate MERN Stack Developer specializing in React, Node.js, Next.js, and cloud-native applications.',
     creator: '@amrandev',
+    images: ['/Amran.png'],
   },
   robots: {
     index: true,

@@ -75,12 +75,12 @@ export function Approach() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <GlassCard className="p-8 sm:p-10 h-full flex flex-col hover:shadow-2xl hover:shadow-indigo-500/10 border border-gray-100 dark:border-white/10 transition-all duration-300 group" hoverEffect spotlight>
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${item.bgColor} ${item.color} group-hover:scale-110 transition-transform duration-300 shadow-inner ring-1 ring-inset ring-current/20`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${item.bgColor} ${item.color} group-hover:scale-110 transition-transform duration-300 shadow-inner ring-1 ring-inset ring-current/20`}>
                   <item.icon className="w-7 h-7" />
                 </div>
-                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   {item.title}
-                </h4>
+                </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed flex-grow text-base">
                   {item.description}
                 </p>

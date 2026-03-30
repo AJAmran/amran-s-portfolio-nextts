@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Code2, Database, Globe, Layout, Server, Smartphone } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const services = [
   {
@@ -62,7 +63,7 @@ export function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <GlassCard className="p-8 sm:p-10 h-full flex flex-col hover:shadow-2xl hover:shadow-indigo-500/10 border border-gray-100 dark:border-white/10 transition-all duration-300 group" hoverEffect spotlight>
-                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 border border-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 border border-indigo-500/20 rounded-full flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300 shadow-inner">
                   <service.icon className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
@@ -84,17 +85,19 @@ export function Services() {
           className="mt-20 sm:mt-24 text-center px-4"
         >
           <div className="relative inline-block group w-full sm:w-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-[2rem] sm:rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
-            <div className="relative px-6 py-6 sm:px-10 sm:py-5 rounded-[2rem] sm:rounded-full border border-white/40 dark:border-white/10 bg-white/90 dark:bg-black/80 backdrop-blur-xl flex flex-col md:flex-row items-center justify-center gap-6 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
+            <div className="relative px-6 py-6 sm:px-10 sm:py-5 rounded-3xl border border-white/40 dark:border-white/10 bg-white/90 dark:bg-black/80 backdrop-blur-xl flex flex-col md:flex-row items-center justify-center gap-6 shadow-2xl">
               <span className="text-gray-900 dark:text-gray-100 font-bold text-lg sm:text-xl tracking-tight text-center md:text-left">
                 Ready to start your project? Let&apos;s build together.
               </span>
-              <a
+              <Button
                 href="#contact"
-                className="w-full md:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-base font-bold hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105 transition-all text-center whitespace-nowrap"
+                variant="gradient"
+                size="sm"
+                className="w-full md:w-auto px-8 py-3.5 whitespace-nowrap"
               >
                 Let&apos;s Talk
-              </a>
+              </Button>
             </div>
           </div>
         </motion.div>

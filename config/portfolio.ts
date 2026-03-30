@@ -35,10 +35,10 @@ export const portfolioConfig = {
   ],
   hero: {
     badge: "Available for work",
-    heading1: "Building",
-    heading2: "The Future",
+    heading1: "Architecting",
+    heading2: "Digital Excellence",
     description:
-      "I'm Md. Amran Hossen. I craft spatial, immersive, and high-performance web experiences.",
+      "I am Md. Amran Hossen, a MERN Stack Developer specialized in building high-performance, robust, and modern web architectures.",
   },
   skills: {
     title: "Development Toolkit",

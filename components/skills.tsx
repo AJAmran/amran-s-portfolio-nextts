@@ -70,7 +70,7 @@ export function Skills() {
                   
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-8">
-                      <div className={cn("p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-inner ring-1 ring-inset ring-current/10", category.color)}>
+                      <div className={cn("p-4 rounded-full bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-inner ring-1 ring-inset ring-current/10", category.color)}>
                         <category.icon className="w-8 h-8 sm:w-10 sm:h-10" />
                       </div>
                       <div className="text-5xl sm:text-7xl font-bold text-gray-100 dark:text-white/5 font-mono select-none -mt-4 -mr-4 group-hover:text-indigo-50 dark:group-hover:text-white/10 transition-colors duration-500">
@@ -78,9 +78,9 @@ export function Skills() {
                       </div>
                     </div>
 
-                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       {category.title}
-                    </h4>
+                    </h3>
                     
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-md">
                       {category.description}
@@ -90,7 +90,7 @@ export function Skills() {
                       {category.skills.map((skill, skillIndex) => (
                         <span 
                           key={skillIndex}
-                          className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-xl bg-white dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-700/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-indigo-50 dark:hover:bg-indigo-500/20 hover:text-indigo-700 dark:hover:text-indigo-200 hover:border-indigo-200 dark:hover:border-indigo-500/30 transition-all duration-300 cursor-default"
+                          className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-full bg-white dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-700/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-indigo-50 dark:hover:bg-indigo-500/20 hover:text-indigo-700 dark:hover:text-indigo-200 hover:border-indigo-200 dark:hover:border-indigo-500/30 transition-all duration-300 cursor-default"
                         >
                           {skill}
                         </span>

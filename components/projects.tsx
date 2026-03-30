@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ExternalLink, Github, Server } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { portfolioConfig } from "@/config/portfolio"
@@ -12,10 +13,13 @@ import { portfolioConfig } from "@/config/portfolio"
 export function Projects() {
   const { projects } = portfolioConfig
   const [activeCategory, setActiveCategory] = useState("All")
+  const [showAll, setShowAll] = useState(false)
 
   const filteredProjects = projects.items.filter(
     (project) => activeCategory === "All" || project.category === activeCategory
   )
+
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4)
 
   return (
     <section id="projects" className="py-24 relative">
@@ -27,15 +31,15 @@ export function Projects() {
           className="mb-12"
         />
 
-        {/* Filter Tabs - iOS Style */}
-        <div className="flex justify-center mb-12 overflow-x-auto pb-4 hide-scrollbar">
-          <div className="flex items-center gap-1 sm:gap-2 p-1.5 bg-white/60 dark:bg-black/40 rounded-full border border-gray-200 dark:border-white/10 backdrop-blur-xl shadow-sm w-max">
+        {/* Filter Tabs - Responsive */}
+        <div className="flex justify-center mb-12 px-2">
+          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-1 sm:flex-nowrap p-1.5 bg-white/60 dark:bg-black/40 rounded-2xl sm:rounded-full border border-gray-200 dark:border-white/10 backdrop-blur-xl shadow-sm w-full sm:w-auto">
             {projects.categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={cn(
-                  "relative px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-colors duration-300 whitespace-nowrap z-10",
+                  "relative flex-1 sm:flex-initial px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold tracking-wide transition-colors duration-300 whitespace-nowrap z-10 min-w-0",
                   activeCategory === category
                     ? "text-white dark:text-black"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
@@ -44,7 +48,7 @@ export function Projects() {
                 {activeCategory === category && (
                   <motion.span
                     layoutId="activeCategory"
-                    className="absolute inset-0 bg-gray-900 dark:bg-white rounded-full -z-10 shadow-md"
+                    className="absolute inset-0 bg-gray-900 dark:bg-white rounded-xl sm:rounded-full -z-10 shadow-md"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -56,7 +60,7 @@ export function Projects() {
 
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
+            {visibleProjects.map((project, index) => (
               <motion.div
                 key={project.title}
                 layout
@@ -71,8 +75,9 @@ export function Projects() {
                     <Image
                       src={project.image}
                       alt={project.title}
+                      title={project.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                       priority={index < 2}
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -86,26 +91,28 @@ export function Projects() {
 
                     <div className="absolute inset-x-0 bottom-0 p-6 flex gap-3 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20">
                       {project.links.demo && (
-                        <a
+                        <Button
                           href={project.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
+                          variant="none" size="none"
                           className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold rounded-full shadow-lg transition-colors"
                           title="Live Demo"
                         >
                           <ExternalLink className="w-4 h-4" /> Live Demo
-                        </a>
+                        </Button>
                       )}
                       {project.links.client && (
-                        <a
+                        <Button
                           href={project.links.client}
                           target="_blank"
                           rel="noopener noreferrer"
+                          variant="none" size="none"
                           className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-sm font-bold rounded-full shadow-lg border border-white/20 transition-colors"
                           title="View Code"
                         >
                           <Github className="w-4 h-4" /> Code
-                        </a>
+                        </Button>
                       )}
                     </div>
                   </div>
@@ -132,14 +139,14 @@ export function Projects() {
                     {(project.links.client || project.links.server) && (
                       <div className="flex flex-wrap gap-5 pt-5 border-t border-gray-200 dark:border-gray-800">
                         {project.links.client && (
-                          <a href={project.links.client} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
+                          <Button href={project.links.client} target="_blank" rel="noopener noreferrer" variant="none" size="none" className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
                             <Github className="w-4 h-4" /> Client Repo
-                          </a>
+                          </Button>
                         )}
                         {project.links.server && (
-                          <a href={project.links.server} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
+                          <Button href={project.links.server} target="_blank" rel="noopener noreferrer" variant="none" size="none" className="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 transition-colors">
                             <Server className="w-4 h-4" /> Server Repo
-                          </a>
+                          </Button>
                         )}
                       </div>
                     )}
@@ -149,6 +156,24 @@ export function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {filteredProjects.length > 4 && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-16 text-center"
+          >
+            <Button
+              onClick={() => setShowAll(!showAll)}
+              variant="outline"
+              size="lg"
+              className="px-10 py-6 rounded-full font-bold text-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+            >
+              {showAll ? "Show Less" : `Show All Projects (${filteredProjects.length})`}
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   )

@@ -3,6 +3,7 @@
 import { motion } from "motion/react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { SectionHeader } from "@/components/ui/section-header"
+import { Button } from "@/components/ui/button"
 import { Mail, Phone, MapPin, Send, Download, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { useState } from "react"
@@ -58,21 +59,21 @@ export function Contact() {
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-8">Let&apos;s Connect</h3>
                 <div className="space-y-4">
-                  <a href={`mailto:${personal.email}`} className="flex items-center gap-5 p-4 sm:p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 hover:shadow-lg transition-all duration-300 group">
-                    <div className="p-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform shadow-inner ring-1 ring-inset ring-indigo-500/20">
-                      <Mail className="w-6 h-6" />
+                  <Button href={`mailto:${personal.email}`} variant="none" size="none" aria-label={`Email ${personal.email}`} className="flex items-center gap-5 p-4 sm:p-5 rounded-full bg-white/50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 hover:shadow-lg transition-all duration-300 group">
+                    <div className="p-3.5 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform shadow-inner ring-1 ring-inset ring-indigo-500/20">
+                      <Mail className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <span className="text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors w-full break-all">{personal.email}</span>
-                  </a>
-                  <a href={`tel:${personal.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-5 p-4 sm:p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-purple-500/30 dark:hover:border-purple-500/30 hover:shadow-lg transition-all duration-300 group">
-                    <div className="p-3.5 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform shadow-inner ring-1 ring-inset ring-purple-500/20">
-                      <Phone className="w-6 h-6" />
+                  </Button>
+                  <Button href={`tel:${personal.phone.replace(/[^0-9+]/g, '')}`} variant="none" size="none" aria-label={`Call ${personal.phone}`} className="flex items-center gap-5 p-4 sm:p-5 rounded-full bg-white/50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-purple-500/30 dark:hover:border-purple-500/30 hover:shadow-lg transition-all duration-300 group">
+                    <div className="p-3.5 rounded-full bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform shadow-inner ring-1 ring-inset ring-purple-500/20">
+                      <Phone className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <span className="text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">{personal.phone}</span>
-                  </a>
-                  <div className="flex items-center gap-5 p-4 sm:p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-pink-500/30 dark:hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 group cursor-default">
-                    <div className="p-3.5 rounded-xl bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform shadow-inner ring-1 ring-inset ring-pink-500/20">
-                      <MapPin className="w-6 h-6" />
+                  </Button>
+                  <div className="flex items-center gap-5 p-4 sm:p-5 rounded-full bg-white/50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-pink-500/30 dark:hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 group cursor-default">
+                    <div className="p-3.5 rounded-full bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform shadow-inner ring-1 ring-inset ring-pink-500/20">
+                      <MapPin className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <span className="text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">{personal.location}</span>
                   </div>
@@ -81,16 +82,17 @@ export function Contact() {
 
               <div className="mt-12 relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-white dark:to-gray-200 rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity" />
-                <a
+                <Button
                   href={personal.resumeUrl}
                   download
+                  variant="none" size="none"
                   className="relative inline-flex items-center justify-center w-full px-8 py-4 sm:py-5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black font-bold text-lg hover:scale-[1.02] transition-transform shadow-xl gap-3 overflow-hidden border border-gray-800 dark:border-white/20"
                 >
                   <div className="absolute inset-0 bg-white/20 dark:bg-black/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative z-10 flex items-center gap-2">
                     <Download className="w-5 h-5" /> Download Resume
                   </span>
-                </a>
+                </Button>
               </div>
             </GlassCard>
           </motion.div>
@@ -162,10 +164,11 @@ export function Contact() {
                 </div>
 
                 <div className="pt-2">
-                  <button
+                  <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group relative w-full px-8 py-4 sm:py-5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-3 overflow-hidden"
+                    variant="none" size="none"
+                    className="group relative w-full px-8 py-4 sm:py-5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-3 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-out" />
                     <span className="relative z-10 flex items-center justify-center gap-2">
@@ -179,7 +182,7 @@ export function Contact() {
                         </>
                       )}
                     </span>
-                  </button>
+                  </Button>
                 </div>
 
                 {isSuccess && (

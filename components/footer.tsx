@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { portfolioConfig } from "@/config/portfolio"
 
 export function Footer() {
@@ -20,9 +21,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+            <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
               Quick Links
-            </h3>
+            </h2>
             <ul className="space-y-3">
               <li>
                 <Link href="#about" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">
@@ -48,19 +49,19 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+            <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
               Connect
-            </h3>
+            </h2>
             <div className="flex flex-wrap gap-4">
-              <a href={portfolioConfig.personal.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="p-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 hover:shadow-lg transition-all group">
+              <Button href={portfolioConfig.personal.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" variant="none" size="none" className="p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 hover:shadow-lg transition-all group">
                 <Github className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" aria-hidden="true" />
-              </a>
-              <a href={portfolioConfig.personal.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 hover:shadow-lg transition-all group">
+              </Button>
+              <Button href={portfolioConfig.personal.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" variant="none" size="none" className="p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 hover:shadow-lg transition-all group">
                 <Linkedin className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" aria-hidden="true" />
-              </a>
-              <a href="mailto:mdamranhossen77@gmail.com" aria-label="Send Email" className="p-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 hover:shadow-lg transition-all group">
+              </Button>
+              <Button href="mailto:mdamranhossen77@gmail.com" aria-label="Send Email" variant="none" size="none" className="p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-indigo-500/30 hover:shadow-lg transition-all group">
                 <Mail className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" aria-hidden="true" />
-              </a>
+              </Button>
             </div>
           </div>
         </div>
