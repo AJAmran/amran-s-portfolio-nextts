@@ -59,6 +59,7 @@ export const portfolioConfig = {
           "Redux Toolkit",
           "HTML5 & CSS3",
           "Bootstrap",
+          "Shadcn UI",
         ],
         color: "text-blue-500",
       },
@@ -87,6 +88,10 @@ export const portfolioConfig = {
         skills: [
           "MongoDB",
           "Mongoose",
+          "Prisma",
+          "PostgreSQL",
+          "MySQL",
+          "SQL",
           "Firebase",
           "Vercel",
           "Netlify",
