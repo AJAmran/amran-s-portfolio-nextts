@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-import { ArrowRight, Github, Linkedin, Mail, Facebook, Instagram, X } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Facebook, Instagram, X, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { GlassCard } from "@/components/ui/glass-card"
@@ -42,7 +42,7 @@ export function Hero() {
               <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wide">{hero.badge}</span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-gray-900 dark:text-white mb-6 lg:mb-8 leading-tight lg:leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter text-gray-900 dark:text-white mb-6 lg:mb-8 leading-tight lg:leading-[1.15]">
               {hero.heading1} <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-gradient-text">
                 {hero.heading2}
@@ -62,11 +62,14 @@ export function Hero() {
                 <span className="relative z-10 flex items-center justify-center gap-2">Let&apos;s Talk <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
               </Button>
               <Button
-                href="#projects"
+                href={personal.resumeUrl}
+                download
                 variant="outline"
                 className="w-full sm:w-auto font-bold"
               >
-                View Work
+                <span className="flex items-center justify-center gap-2">
+                  <Download className="w-5 h-5" /> Download Resume
+                </span>
               </Button>
             </div>
 

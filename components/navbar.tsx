@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Download, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
@@ -88,15 +88,6 @@ export function Navbar() {
             </div>
 
             <div className="flex items-center gap-3">
-              <a
-                href={portfolioConfig.personal.resumeUrl}
-                download
-                className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105 transition-all duration-300"
-                aria-label="Download Resume"
-              >
-                <Download className="w-4 h-4" aria-hidden="true" />
-                Resume
-              </a>
               <ThemeToggle />
               
               {/* Mobile Menu Button */}
@@ -171,18 +162,6 @@ export function Navbar() {
                   </li>
                 ))}
               </ul>
-              <div className="p-2 pt-0">
-                <a
-                  href={portfolioConfig.personal.resumeUrl}
-                  download
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
-                  aria-label="Download Resume"
-                >
-                  <Download className="w-4 h-4" aria-hidden="true" />
-                  Download Resume
-                </a>
-              </div>
             </motion.div>
           </>
         )}
